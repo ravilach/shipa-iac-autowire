@@ -1,0 +1,5 @@
+framework_name                              = "tf-created-framework"
+shipa_token                                 = "Your_Shipa_Token"
+cluster_name                                = "tf-bound-cluster"
+app_name                                    = "tf-created-app"
+app_image                                   = "docker.io/wordpress"
