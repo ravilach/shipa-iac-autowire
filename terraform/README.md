@@ -34,3 +34,4 @@ Always room for improvement!
 
 * This version takes in KubeConfig so getting certain cluster wiring information from cloud e.g AWS Terraform Provider. 
 * Not using Null Resource to run kubectl commands for token, endpoint, and cert wirings to Shipa. 
+* Easy First PR: Move Shipa Target URL from hard wired Cloud URL to Variable for on-prem or custom installs. 
