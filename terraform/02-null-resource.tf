@@ -11,7 +11,7 @@ resource "null_resource" "k8s_auto_wiring" {
     command     = <<EOT
 
 #API Address - Prone to UNIX and Color Characters in stdout. Might have to adjust based on your Linux Distro.
-kubectl cluster-info | grep 'Kubernetes' | awk '/http/ {print $NF}' | sed 's/[^[:alpha:];\ -@]//g' >> ${path.module}/api-address-temp.txt
+kubectl cluster-info | grep 'Kubernetes' | awk '/http/ {print $NF}' | sed 's/[^[:alpha:];\ -@]//g' > ${path.module}/api-address-temp.txt
 
 #Token
 kubectl --namespace kube-system get secret $(kubectl --namespace kube-system get secret | grep shipa-admin | awk '{print $1}') --output jsonpath="{.data.token}" | base64 --decode  > ${path.module}/token.txt
