@@ -25,7 +25,7 @@ terraform destroy -state=terraform.tfstate -refresh=false -var-file="env/autowir
 ### Debug
 ```
 export TF_LOG="DEBUG"
-export TF_LOG_PATH="../autowire-terraformterraform.log"
+export TF_LOG_PATH="../autowire-terraform.log"
 ```
 
 ## Enhancements
