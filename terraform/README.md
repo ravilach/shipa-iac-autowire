@@ -28,6 +28,12 @@ export TF_LOG="DEBUG"
 export TF_LOG_PATH="../autowire-terraform.log"
 ```
 
+## How to Clean Up
+Can run Terraform Destroy to clean up.
+```
+terraform destroy -var-file="env/autowire.tfvars"
+```
+
 ## Enhancements
 
 Always room for improvement!
