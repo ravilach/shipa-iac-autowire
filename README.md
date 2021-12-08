@@ -16,7 +16,7 @@ Will need to grab your target and API key.
 * API Key -> Leverage the Shipa CLI to create one and assign a role. [API Key Creation Doc](https://learn.shipa.io/docs/tokens) or show the default token.
 
 ## Run the Terraform Example
-Clone or Fork the Project and CD into the Terraform Folder
+Clone or Fork the Project and CD into the the respective folders e.g the /terraform Folder
 ```
 #Use default token for quick example.
 shipa show token
