@@ -1,6 +1,6 @@
-# Terraform Shipa Autowire Lite
+# Terraform Shipa Autowire
 
-Will take current kubeconfig and autowire to Shipa. There are other versions that would create an EKS cluster on demand. 
+Will take current kubeconfig and autowire to Shipa. This can plug into your EKS/AKS/GKE Creation process. 
 
 ## How to Run
 
@@ -17,7 +17,7 @@ terraform apply -var-file="env/autowire.tfvars"
 When using cloud resources that don't come up, can manually remove items on the TFState file
 and destroy.
 
-### Reset
+### Remove Orphan Items
 ```
 terraform destroy -state=terraform.tfstate -refresh=false -var-file="env/autowire.tfvars"
 ```
