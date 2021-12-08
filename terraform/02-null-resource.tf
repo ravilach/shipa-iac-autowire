@@ -14,14 +14,14 @@ resource "null_resource" "k8s_auto_wiring" {
 kubectl cluster-info | grep 'Kubernetes' | awk '/http/ {print $NF}' | sed 's/[^[:alpha:];\ -@]//g' >> ${path.module}/api-address-temp.txt
 
 #Token
-kubectl --namespace kube-system get secret $(kubectl --namespace kube-system get secret | grep shipa-admin | awk '{print $1}') --output jsonpath="{.data.token}" | base64 --decode  >> ${path.module}/token.txt
+kubectl --namespace kube-system get secret $(kubectl --namespace kube-system get secret | grep shipa-admin | awk '{print $1}') --output jsonpath="{.data.token}" | base64 --decode  > ${path.module}/token.txt
 
 #CA 
-kubectl get secret $(kubectl get secret | grep default-token | awk '{print $1}') -o jsonpath='{.data.ca\.crt}' | base64 --decode >> ${path.module}/cert.txt
+kubectl get secret $(kubectl get secret | grep default-token | awk '{print $1}') -o jsonpath='{.data.ca\.crt}' | base64 --decode > ${path.module}/cert.txt
 
 #Format API Endpoint taking off HTTPS and coloring from MacBook [14 characters off front and 2 characters terminal color line end] 
 #Kubectl Console to api-address-temp produces on a MacBook "0;33mhttps://D69478E7F0A93850FC2A83594B8E0D70.gr7.ap-southeast-1.eks.amazonaws.com0m\n"
-cat ${path.module}/api-address-temp.txt | cut -c 14- | sed 's/..$//' >> api-address-formatted.txt
+cat ${path.module}/api-address-temp.txt | cut -c 14- | sed 's/..$//' > api-address-formatted.txt
 
 EOT
   }
