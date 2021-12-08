@@ -7,16 +7,17 @@ resource "null_resource" "temp_file_janitor" {
     command     = <<EOT
 
 #API Address
-echo File Contents Redacted, Ready for Next Run > api-address-temp.txt
+echo File Contents Redacted, Ready for Next Run > ${path.module}/api-address-temp.txt
 
 #Token
-echo File Contents Redacted, Ready for Next Run > token.txt
+echo File Contents Redacted, Ready for Next Run > ${path.module}/token.txt
 
 #CA 
-echo File Contents Redacted, Ready for Next Run > cert.txt
+echo File Contents Redacted, Ready for Next Run > ${path.module}/cert.txt
 
 #Format API Endpoint
-echo File Contents Redacted, Ready for Next Run > api-address-formatted.txt
+echo File Contents Redacted, Ready for Next Run > ${path.module}/api-address-formatted.txt
+
 
 EOT
   }
